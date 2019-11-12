@@ -243,6 +243,7 @@ $app->get('/discord/', function () use ($app, $config, $log) {
                 if (strlen($newNick) >= 32) {
                     $newNick = mb_strimwidth($newNick, 0, 32);
                 }
+                $log->notice("modifyGuildMember - $newNick");
                 $restcord->guild->modifyGuildMember([
                     'guild.id' => (int)$config['discord']['guildId'],
                     'user.id' => (int)$_SESSION['user_id'],
@@ -264,6 +265,7 @@ $app->get('/discord/', function () use ($app, $config, $log) {
                 } else {
                     $newNick = '[' . $corporationData['ticker'] . '] ' . trim($memberDetails->user->username);
                 }
+                $log->notice("modifyGuildMember - $newNick");
                 $restcord->guild->modifyGuildMember([
                     'guild.id' => (int)$config['discord']['guildId'],
                     'user.id' => (int)$_SESSION['user_id'], 'nick' => $newNick
@@ -272,6 +274,7 @@ $app->get('/discord/', function () use ($app, $config, $log) {
                 if (strlen($eveName) >= 32) {
                     $eveName = mb_strimwidth($eveName, 0, 32);
                 }
+                $log->notice("modifyGuildMember - $newNick");
                 $restcord->guild->modifyGuildMember([
                     'guild.id' => (int)$config['discord']['guildId'],
                     'user.id' => (int)$_SESSION['user_id'],

@@ -86,6 +86,7 @@ $currentGuild = $restcord->guild->getGuild([
  * Walk through the users that are registered in the auth database
  * 5 at a time, than wait 10 seconds to not run into a rate limit
  */
+
 foreach(array_chunk($users, 5, true) as $userSet) {
 	foreach($userSet as $user) {
 		$characterID = $user['characterID'];
@@ -153,7 +154,7 @@ foreach(array_chunk($users, 5, true) as $userSet) {
 					if (strlen($newNick) >= 32) {
 					    $newNick = mb_strimwidth($newNick, 0, 32);
                     }
-
+                                        $log->notice("Modifying $newNick - Nickname Update");
 					$restcord->guild->modifyGuildMember([
 						'guild.id' => (int) $config['discord']['guildId'],
 						'user.id' => (int) $discordID,
@@ -183,7 +184,7 @@ foreach(array_chunk($users, 5, true) as $userSet) {
                 if (strlen($newNick) >= 32) {
                     $newNick = mb_strimwidth($newNick, 0, 32);
                 }
-
+                                $log->notice("Modifying $newNick - Nickname Update");
 				$restcord->guild->modifyGuildMember([
 					'guild.id' => (int) $config['discord']['guildId'],
 					'user.id' => (int) $discordId,
@@ -193,6 +194,7 @@ foreach(array_chunk($users, 5, true) as $userSet) {
                 if (strlen($eveName) >= 32) {
                     $eveName = mb_strimwidth($eveName, 0, 32);
                 }
+                                $log->notice("Modifying $newNick - Nickname Update");
 				$restcord->guild->modifyGuildMember([
 					'guild.id' => (int) $config['discord']['guildId'],
 					'user.id' => (int) $discordID,
@@ -224,7 +226,7 @@ foreach(array_chunk($users, 5, true) as $userSet) {
 						break;
 					}
 				}
-
+                                $log->notice("Modifying $discordID - General Auth Role Update");
 				$restcord->guild->addGuildMemberRole([
 					'guild.id' => (int) $config['discord']['guildId'],
 					'user.id' => (int) $discordID,
@@ -243,6 +245,7 @@ foreach(array_chunk($users, 5, true) as $userSet) {
 						break;
 					}
 				}
+                                $log->notice("Modifying $discordID - CharacterID Update");
 
 				$restcord->guild->addGuildMemberRole([
 					'guild.id' => (int) $config['discord']['guildId'],
@@ -262,6 +265,7 @@ foreach(array_chunk($users, 5, true) as $userSet) {
 						break;
 					}
 				}
+                                $log->notice("Modifying $discordID - AllianceID Update");
 
 				$restcord->guild->addGuildMemberRole([
 					'guild.id' => (int) $config['discord']['guildId'],
@@ -281,6 +285,7 @@ foreach(array_chunk($users, 5, true) as $userSet) {
 						break;
 					}
 				}
+                                $log->notice("Modifying $discordID - CorporationID Update");
 
 				$restcord->guild->addGuildMemberRole([
 					'guild.id' => (int) $config['discord']['guildId'],

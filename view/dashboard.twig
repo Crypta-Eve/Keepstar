@@ -6,9 +6,9 @@
     <title>Discord Authenticator</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet"
-          href="https://djyhxgczejc94.cloudfront.net/frameworks/bootstrap/3.0.0/themes/cirrus/bootstrap.min.css">
+          href="https://stackpath.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         var delete_cookie = function (name) {
             document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
@@ -112,7 +112,9 @@
         <h3>{{ corp }}</h3>
         <p class="lead">Choose your desired action below.</p>
         <p>
-            <a class="btn btn-outline-primary btn-sm" href="/discord/" role="button">Get Discord Roles</a>
+            <h2>Discord Auth Instructions </h2>
+            <p>If you are new to the TW discord server then click the button below. You will see a large scary error screen! its not scary, and you should be in the discord server. You wont have roles yet! From there you need to join a voice channel in the server. Whilst in voice you need to then reauth on this website. This is a temporary workaround for an auth bug. </p>
+            <a class="btn btn-outline-primary btn-sm btn-primary" href="/discord/" role="button">Get Discord Roles</a>
         </p>
         <script type="text/javascript">
             if ({{ config['teamspeak']['enabled'] }}) {

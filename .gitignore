@@ -4,3 +4,6 @@ cache/
 config.php
 config/database/auth.sqlite
 /nbproject/
+log/
+libraries/database/auth.sqlite
+composer.lock
